@@ -2,8 +2,14 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import crypto from "crypto";
+import path from "path";
+import { fileURLToPath } from "url";
+
 
 dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ROOT_DIR = path.join(__dirname, "..");
 
 const app = express();
 app.use(cors());
@@ -105,6 +111,8 @@ app.post("/api/orders", async (req,res) => {
 });
 
 app.get("/api/health", (_req,res) => res.json({ok:true, service:"LOOTERA STORE"}));
-
+app.get("/", (_req, res) => {
+  res.sendFile(path.join(ROOT_DIR, "LOOTERA_STORE_V2.html"));
+});
 const port = Number(process.env.PORT || 3000);
 app.listen(port, () => console.log(`LOOTERA STORE backend listening on ${port}`));
