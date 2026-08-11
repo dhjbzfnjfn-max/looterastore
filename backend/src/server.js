@@ -245,6 +245,13 @@ app.get("/api/health", (_req, res) => {
   });
 });
 
+app.get("/", (_req, res) => {
+  res.json({
+    ok: true,
+    service: "LOOTERA STORE",
+    message: "Backend работает"
+  });
+});
 const port = Number(
   process.env.PORT || 3000
 );
