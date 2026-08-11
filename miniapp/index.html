@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+  <title>LOOTERA STORE</title>
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <header class="header">
+      <div>
+        <div class="logo">LOOTERA</div>
+        <div class="subtitle">STORE</div>
+      </div>
+
+      <div class="tg-status">
+        ●
+      </div>
+    </header>
+
+
+    <main>
+
+      <section class="hero">
+        <div class="hero-badge">🎮 DIGITAL STORE</div>
+
+        <h1>Игры и цифровые товары</h1>
+
+        <p>
+          Покупка игр, предзаказы, подписки,
+          донаты и цифровые товары.
+        </p>
+      </section>
+
+
+      <section class="section">
+
+        <h2>Выберите категорию</h2>
+
+        <div class="categories">
+
+          <button class="category" data-category="PlayStation 5">
+            <span class="category-icon">🎮</span>
+            <span>
+              <b>PlayStation 5</b>
+              <small>Игры и предзаказы</small>
+            </span>
+          </button>
+
+          <button class="category" data-category="PC / Steam">
+            <span class="category-icon">💻</span>
+            <span>
+              <b>PC / Steam</b>
+              <small>Игры для ПК</small>
+            </span>
+          </button>
+
+          <button class="category" data-category="PC / Epic Games">
+            <span class="category-icon">🕹️</span>
+            <span>
+              <b>Epic Games</b>
+              <small>Игры для ПК</small>
+            </span>
+          </button>
+
+          <button class="category" data-category="Мобильные приложения">
+            <span class="category-icon">📱</span>
+            <span>
+              <b>Приложения</b>
+              <small>Подписки и сервисы</small>
+            </span>
+          </button>
+
+          <button class="category" data-category="Мобильные игры">
+            <span class="category-icon">🔥</span>
+            <span>
+              <b>Мобильные игры</b>
+              <small>Донат и Battle Pass</small>
+            </span>
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <section class="section products-section">
+
+        <div class="section-title-row">
+          <h2>Товары</h2>
+
+          <button id="backButton" class="back-button hidden">
+            ← Назад
+          </button>
+        </div>
+
+        <div id="products" class="products">
+
+          <div class="loading">
+            Загрузка товаров...
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <section id="orderSection" class="section order-section hidden">
+
+        <h2>Оформление заказа</h2>
+
+        <div id="selectedProduct" class="selected-product"></div>
+
+
+        <label for="requestedItem">
+          Что вы хотите купить?
+        </label>
+
+        <input
+          id="requestedItem"
+          type="text"
+          placeholder="Например: GTA VI"
+          autocomplete="off"
+        >
+
+
+        <label for="accountData">
+          Данные аккаунта
+        </label>
+
+        <textarea
+          id="accountData"
+          rows="4"
+          placeholder="Логин / почта / другие необходимые данные"
+        ></textarea>
+
+        <div class="warning">
+          🔐 Данные аккаунта передаются на сервер
+          и сохраняются в зашифрованном виде.
+        </div>
+
+
+        <label>
+          Способ оплаты
+        </label>
+
+        <div class="payment-methods">
+
+          <button
+            type="button"
+            class="payment active"
+            data-payment="transfer"
+          >
+            💳 Перевод
+          </button>
+
+          <button
+            type="button"
+            class="payment"
+            data-payment="yookassa"
+          >
+            💰 ЮKassa
+          </button>
+
+        </div>
+
+
+        <button id="orderButton" class="order-button">
+          Оформить заказ
+        </button>
+
+        <div id="orderMessage" class="order-message"></div>
+
+      </section>
+
+    </main>
+
+
+    <footer>
+      <div>LOOTERA STORE</div>
+      <small>Цифровые товары и игры</small>
+    </footer>
+
+  </div>
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>
